@@ -1,0 +1,18 @@
+syntax = "proto3";
+option go_package = "github.com/tim15/protodemo/api/shopping";
+package shopping;
+
+message Item {
+  enum Category {
+    DAIRY = 0;
+    MEAT = 1;
+    CARBS = 2;
+  }
+  string name = 1;
+  string price = 2;
+  Category type = 3;
+}
+
+message Cart {
+  repeated Item items = 1;
+}
